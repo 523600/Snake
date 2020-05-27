@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Snake: D:/杂事/课程/c语言/c语言代码/Snake/Snake.DEV/struct.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Snake
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_671183d6ef8a677d470e56541b1ae122.html">杂事</a></li><li class="navelem"><a class="el" href="dir_b18ca93acdb2fe7d0b4612c886a541ba.html">课程</a></li><li class="navelem"><a class="el" href="dir_b95ab745dd1369f7c09164ce3f166ac0.html">c语言</a></li><li class="navelem"><a class="el" href="dir_2710f86910d3ff55b50a9661cee77447.html">c语言代码</a></li><li class="navelem"><a class="el" href="dir_da99e60a70964f47ad38bce0d6ef60c7.html">Snake</a></li><li class="navelem"><a class="el" href="dir_b9bd45474b242bb42fef11487084f823.html">Snake.DEV</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">struct.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="struct_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _STRUCT_H      </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _STRUCT_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;graphics.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mmsystem.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma comment (lib, &quot;Winmm.lib&quot;)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_8h.html#a20b74c72560277ef9a48be3be86ee22e">   11</a></span>&#160;<span class="preprocessor">#define SCR_WIDTH      640</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_8h.html#acdae947e23455a477ebf229add03b2f6">   12</a></span>&#160;<span class="preprocessor">#define SCR_HEIGHT     640</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_8h.html#a0240ac851181b84ac374872dc5434ee4">   13</a></span>&#160;<span class="preprocessor">#define N  3</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_8h.html#a71e3ddf030ea8633e937740a3339b969">   14</a></span>&#160;<span class="preprocessor">#define MAXFOODNUM 9</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_8h.html#a1c65411e8b3e751f3cdb901bbcb50586">   15</a></span>&#160;<span class="preprocessor">#define INIT_SPEED 10 </span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">struct </span><a class="code" href="struct_position.html">Position</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="struct_position.html#a9abbe738bad177de91fe4774099c1260">x</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="struct_position.html#a75f48c2a1d2c7131b8be1a0687ae72c8">y</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};<span class="comment">//Coordinate structure </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">struct </span><a class="code" href="struct_link.html">Link</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="struct_link.html#a7d8ad6030eb88738aa2b76ba600fff20">x</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="struct_link.html#a1763ac8834725fc439116fb9053e598e">y</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    color_t <a class="code" href="struct_link.html#a017dab4fa599bc8ee71f11f078ff1b20">s_color</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="struct_link.html">Link</a>* <a class="code" href="struct_link.html#a56e46d2ef878ba6d42edb14d7d5b39d2">prev</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="struct_link.html">Link</a>* <a class="code" href="struct_link.html#ac8df761964be871b632e8203ce5a38aa">next</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};<span class="comment">// snake��s body </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="struct_link_html_a017dab4fa599bc8ee71f11f078ff1b20"><div class="ttname"><a href="struct_link.html#a017dab4fa599bc8ee71f11f078ff1b20">Link::s_color</a></div><div class="ttdeci">color_t s_color</div><div class="ttdef"><b>Definition:</b> main.h:15</div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="struct_link_html"><div class="ttname"><a href="struct_link.html">Link</a></div><div class="ttdef"><b>Definition:</b> main.h:11</div></div>
+<div class="ttc" id="struct_link_html_a7d8ad6030eb88738aa2b76ba600fff20"><div class="ttname"><a href="struct_link.html#a7d8ad6030eb88738aa2b76ba600fff20">Link::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> main.h:13</div></div>
+<div class="ttc" id="struct_link_html_a1763ac8834725fc439116fb9053e598e"><div class="ttname"><a href="struct_link.html#a1763ac8834725fc439116fb9053e598e">Link::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> main.h:14</div></div>
+<div class="ttc" id="struct_link_html_a56e46d2ef878ba6d42edb14d7d5b39d2"><div class="ttname"><a href="struct_link.html#a56e46d2ef878ba6d42edb14d7d5b39d2">Link::prev</a></div><div class="ttdeci">Link * prev</div><div class="ttdef"><b>Definition:</b> main.h:16</div></div>
+<div class="ttc" id="struct_link_html_ac8df761964be871b632e8203ce5a38aa"><div class="ttname"><a href="struct_link.html#ac8df761964be871b632e8203ce5a38aa">Link::next</a></div><div class="ttdeci">Link * next</div><div class="ttdef"><b>Definition:</b> main.h:17</div></div>
+<div class="ttc" id="struct_position_html"><div class="ttname"><a href="struct_position.html">Position</a></div><div class="ttdef"><b>Definition:</b> main.h:20</div></div>
+<div class="ttc" id="struct_position_html_a75f48c2a1d2c7131b8be1a0687ae72c8"><div class="ttname"><a href="struct_position.html#a75f48c2a1d2c7131b8be1a0687ae72c8">Position::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> main.h:23</div></div>
+<div class="ttc" id="struct_position_html_a9abbe738bad177de91fe4774099c1260"><div class="ttname"><a href="struct_position.html#a9abbe738bad177de91fe4774099c1260">Position::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> main.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

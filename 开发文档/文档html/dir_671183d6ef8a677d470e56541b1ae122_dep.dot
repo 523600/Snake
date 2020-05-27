@@ -1,0 +1,10 @@
+digraph "D:/杂事" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_671183d6ef8a677d470e56541b1ae122 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_671183d6ef8a677d470e56541b1ae122.html"];
+    dir_671183d6ef8a677d470e56541b1ae122 [shape=plaintext label="杂事"];
+    dir_b18ca93acdb2fe7d0b4612c886a541ba [shape=box label="课程" color="red" fillcolor="white" style="filled" URL="dir_b18ca93acdb2fe7d0b4612c886a541ba.html"];
+  }
+}

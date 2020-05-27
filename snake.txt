@@ -1,0 +1,370 @@
+#include <graphics.h>
+#include <cmath>
+#include <iostream>
+#include <sstream>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <conio.h>
+#include <windows.h>
+#include<mmsystem.h>
+#pragma comment (lib, "Winmm.lib")
+
+
+
+#define SCR_WIDTH      640
+#define SCR_HEIGHT     640
+#define N  3
+
+using namespace std;
+
+struct Link
+{
+	double x;
+	double y;
+	color_t s_color;
+	Link* prev;
+	Link* next;
+};
+
+struct Position
+{
+	double x;
+	double y;
+};
+int foodnum=9;
+int t=0;
+int flag=0;
+class Food
+{
+	public:
+		Position pos;
+		int data;
+		Food finit(int);
+	 	void fshow();	
+};
+
+Food Food::finit(int p)
+{
+	
+	//int r=rand()%10;
+	double rx=rand()%640+20;
+	double ry=rand()%640+20;
+	this->data=p;
+	this->pos.x=rx;
+	this->pos.y=ry;
+	return *this;
+	
+}
+
+void Food::fshow()
+{
+	if(data!=0){
+		char c=data+'0';
+		setcolor(GREEN);
+		setfont(20, 0, "??");
+		outtextxy(pos.x, pos.y, c);
+	}
+}
+
+class Monster
+{
+	public:
+		Position pos;
+		void minit();
+		void mmove(double ,double);
+		void mshow();
+};
+
+void Monster::minit()
+{
+	srand((unsigned int)time(NULL));
+	double rx=rand()%640;
+	double ry=rand()%640;
+	pos.x=300;
+	pos.y=300;
+	
+}
+
+void Monster::mshow()
+{
+	setfillcolor(EGERGB(0x80, 0x0, 0xFF));
+	bar(pos.x-10,pos.y-10,pos.x+10,pos.y+10);
+}
+
+void Monster::mmove(double a,double b)
+{
+	setfillcolor(WHITE);
+	bar(pos.x-10,pos.y-10,pos.x+10,pos.y+10);
+	pos.x+=((a-pos.x)/50);
+	pos.y+=((b-pos.y)/50);
+	mshow();
+}
+
+class Snake
+{
+	public:	
+		int speed;
+		int direction;
+		Food food[9];
+		Monster monster;
+		
+		void init();
+		void move(int);
+		void show();
+		bool iseat();
+		bool isdead();
+		Snake(int s=10):speed(s){};
+		
+
+		void addbody(int ,int);
+		Link* head=NULL;
+		Link* tail=NULL;
+};
+
+bool Snake::isdead()
+{
+	if(head->x<20||head->y<20||head->x>620||head->y>620)
+	{
+		flag=1;
+		cleardevice();
+		setfont(48, 0, "??");
+		setcaption("failed1" );
+		outtextxy(330, 350, "you lose");
+		getch();
+		return true;
+	}else if(abs(monster.pos.y-head->y)<10&&abs(monster.pos.x-head->x)<10){
+		flag=1;
+		cleardevice();
+		setfont(48, 0, "??");
+		setcaption("failed2" );
+		outtextxy(330, 350, "you lose");
+		getch();
+		return true;
+	}else{
+		return false;
+	}
+}
+
+bool Snake::iseat()
+{
+	int num;
+	for(int j=0;j<9;j++)
+	{
+		if(food[j].data!=0)
+		{
+			if(abs(food[j].pos.x-head->x)<20&&abs(food[j].pos.y-head->y)<20)
+			{
+				switch(direction)
+				{
+					case 1:
+						for(num=0;num<food[j].data;num++)
+						{
+							addbody(head->x,head->y-10*num);
+						}
+						break; 
+					case 2:
+						for(num=0;num<food[j].data;num++)
+						{
+							addbody(head->x,head->y+10*num);
+						}
+						break;
+					case 3:
+						for(num=0;num<food[j].data;num++)
+						{
+							addbody(head->x-10*num,head->y);
+						}
+						break;
+					case 4:
+						for(num=0;num<food[j].data;num++)
+						{
+							addbody(head->x+10*num,head->y);
+						}
+						break;
+				}
+				//speed+=10*food[j].data;	
+				food[j].data=0;
+				foodnum--;
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+void Snake::addbody(int x_,int y_)
+{
+	Link* p=new Link;
+	p->x=x_;
+	p->y=y_;
+	if(head){
+		p->next=head;
+		head->prev=p;
+		head=p;
+		head->next->s_color=BLACK;//
+		p->s_color=RED;//
+		
+	}else {
+		head=tail=p;
+	}
+	setfillcolor(head->s_color);
+	bar(head->x-5,head->y-5,head->x+5,head->y+5);
+	//delete p;
+}
+
+void Snake::init()
+{
+	monster.minit();
+	
+	int k=1;
+	//char ch;
+	for(int i=0;i<9;i++)
+	{
+		//srand((unsigned int)time(NULL));
+		//ch=k+'0';
+		food[i]=food[i].finit(k);
+		//setfont(48, 0, "??");
+       // outtextxy(330, 350, "loading...");
+		//delay(1000);
+		k++;
+		//getch();
+	}
+	cleardevice();
+	//for(int i=0;i<9;i++)
+	//{
+		//food[i].fshow();
+	//}
+
+	//srand((unsigned int)time(NULL));
+	//float r1=rand()%600+20;
+	//float r2=rand()%600+20;
+	for(int i=0;i<5;i++)
+	{
+		addbody(100,200-10*i);//r1r2
+	}
+	direction=1;
+	
+}
+
+void Snake::move(int direction_)
+{
+	Link* p=(Link*)malloc(sizeof(Link*));
+	float x_=head->x;
+	float y_=head->y;
+	switch(direction_)
+	{
+		case 1:
+			y_-=10;
+			break; 
+		case 2:
+			y_+=10; 
+			break;
+		case 3:
+			x_-= 10;
+			break;
+		case 4:
+			x_ += 10;
+			break;
+	}
+	addbody(x_,y_);
+	p=tail;
+	tail=tail->prev;
+	if(tail)
+		tail->next = NULL;
+
+	setfillcolor(WHITE);
+	bar(p->x-10,p->y-10,p->x+10,p->y+10);
+	delete p;  	                       
+}
+
+void Snake::show()
+{
+	char k;
+	while(isdead()==false )
+	{
+		//t=fclock();
+		//PlaySound("music.wav", NULL, SND_FILENAME | SND_ASYNC|SND_LOOP);
+		t++;
+		stringstream ss1,ss2;
+        ss1 << foodnum;
+        string s1 = ss1.str();
+        ss2 << t;
+        string s2 = ss2.str();
+        string s = "Snake - Food:" + s1 + ",Time:" + s2;
+        char* pszMultiByte = &s[0];  //strlen(pwsUnicode)=5
+		int iSize; 
+		wchar_t* pwszUnicode; 
+	
+		iSize = MultiByteToWideChar(CP_ACP, 0, pszMultiByte , -1, NULL, 0);
+		pwszUnicode = (wchar_t *)malloc(iSize*sizeof(wchar_t)); 
+		MultiByteToWideChar(CP_ACP, 0, pszMultiByte , -1, pwszUnicode , iSize);
+		setcaption(pwszUnicode );
+		k = getch();
+	//	t++;
+		for(int i=0;i<9;i++)
+		{
+			food[i].fshow();
+		}
+		monster.mshow();///////////////
+		switch(k)
+		{
+			case 'w':
+				if(direction == 2)
+					continue;
+				direction = 1;
+				break;
+			case 's':
+				if(direction== 1)
+					continue;
+				direction = 2;
+				break;
+			case 'a':
+				if(direction == 4)
+					continue;
+				direction = 3;
+				break;
+			case 'd':
+				if(direction == 3)
+					continue;
+				direction= 4;
+				break;
+		}
+		move(direction);
+		monster.mmove(head->x,head->y);
+		if(iseat()==true){
+			t++;
+			continue;
+		}
+		delay(speed);
+		if(foodnum==0){
+			setcaption("you win");
+			break;
+		}
+	}
+	cleardevice();
+	if(flag==0){
+		setcaption("you win");
+		 outtextxy(330, 350, "you win");
+	}
+	getch();
+	closegraph();
+}
+void Gamerun(void)
+{
+	initgraph(SCR_WIDTH, SCR_HEIGHT,0);
+	setbkcolor(WHITE);
+
+	PlaySound("music.wav", NULL, SND_FILENAME | SND_ASYNC|SND_LOOP|SND_NODEFAULT);
+    Snake snake;
+    snake.init();
+    
+    snake.show();
+    
+}
+
+int main(void) 
+{
+    Gamerun();
+	return 0;
+}
+

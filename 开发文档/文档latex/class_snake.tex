@@ -1,0 +1,142 @@
+\hypertarget{class_snake}{}\section{Snake类 参考}
+\label{class_snake}\index{Snake@{Snake}}
+
+
+control snake  
+
+
+
+
+{\ttfamily \#include $<$snake.\+h$>$}
+
+
+
+Snake 的协作图\+:
+% FIG 0
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_snake_ac9f00db4b693de3c552a0ae7275c8412}{init} ()
+\item 
+void \hyperlink{class_snake_a602fd6cb710af4a5e15785e82714d772}{move} (int)
+\item 
+void \hyperlink{class_snake_a1f55b539dbd69567f0af08d13d61389c}{show} ()
+\item 
+bool \hyperlink{class_snake_ae6e73811e36fa6e311d8d05ca339434e}{Is\+Eat} ()
+\item 
+void \hyperlink{class_snake_a0cf96a23372ed4b4242162583cea121c}{Game\+Run} (void)
+\item 
+bool \hyperlink{class_snake_aa2e54c02d9427ff0744c2fba74fb2985}{Is\+Dead} ()
+\item 
+void \hyperlink{class_snake_a035f93c5d5cc816fff092c3949b915fd}{addbody} (int, int)
+\item 
+\hyperlink{class_snake_a8854828745d765e3a96ec33ff96b501f}{Snake} (int s=\hyperlink{struct_8h_a1c65411e8b3e751f3cdb901bbcb50586}{I\+N\+I\+T\+\_\+\+S\+P\+E\+E\+D})
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_snake_a18db40ca997cae2a8be85987330010f1}{speed}
+\item 
+int \hyperlink{class_snake_a1349ccf7f145382b601ac41927f84af4}{direction}
+\item 
+\hyperlink{class_food}{Food} \hyperlink{class_snake_a2abf1fa22e67f5d911d973a5dea52f4d}{food} \mbox{[}\hyperlink{struct_8h_a71e3ddf030ea8633e937740a3339b969}{M\+A\+X\+F\+O\+O\+D\+N\+U\+M}\mbox{]}
+\item 
+\hyperlink{class_monster}{Monster} \hyperlink{class_snake_a28ed7a3049eb61c81bc3aef5487b6e3e}{monster}
+\item 
+\hyperlink{struct_link}{Link} $\ast$ \hyperlink{class_snake_a99959d37db34343d4d0c4a618e72fd43}{head} =N\+U\+L\+L
+\item 
+\hyperlink{struct_link}{Link} $\ast$ \hyperlink{class_snake_a7d6269120c57743dd7da9da7bf2c1bc4}{tail} =N\+U\+L\+L
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+control snake 
+
+\subsection{构造及析构函数说明}
+\hypertarget{class_snake_a8854828745d765e3a96ec33ff96b501f}{}\index{Snake@{Snake}!Snake@{Snake}}
+\index{Snake@{Snake}!Snake@{Snake}}
+\subsubsection[{Snake(int s=\+I\+N\+I\+T\+\_\+\+S\+P\+E\+E\+D)}]{\setlength{\rightskip}{0pt plus 5cm}Snake\+::\+Snake (
+\begin{DoxyParamCaption}
+\item[{int}]{s = {\ttfamily {\bf I\+N\+I\+T\+\_\+\+S\+P\+E\+E\+D}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_snake_a8854828745d765e3a96ec33ff96b501f}
+
+
+\subsection{成员函数说明}
+\hypertarget{class_snake_a035f93c5d5cc816fff092c3949b915fd}{}\index{Snake@{Snake}!addbody@{addbody}}
+\index{addbody@{addbody}!Snake@{Snake}}
+\subsubsection[{addbody(int, int)}]{\setlength{\rightskip}{0pt plus 5cm}void Snake\+::addbody (
+\begin{DoxyParamCaption}
+\item[{int}]{x\+\_\+, }
+\item[{int}]{y\+\_\+}
+\end{DoxyParamCaption}
+)}\label{class_snake_a035f93c5d5cc816fff092c3949b915fd}
+\hypertarget{class_snake_a0cf96a23372ed4b4242162583cea121c}{}\index{Snake@{Snake}!Game\+Run@{Game\+Run}}
+\index{Game\+Run@{Game\+Run}!Snake@{Snake}}
+\subsubsection[{Game\+Run(void)}]{\setlength{\rightskip}{0pt plus 5cm}void Snake\+::\+Game\+Run (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{class_snake_a0cf96a23372ed4b4242162583cea121c}
+\hypertarget{class_snake_ac9f00db4b693de3c552a0ae7275c8412}{}\index{Snake@{Snake}!init@{init}}
+\index{init@{init}!Snake@{Snake}}
+\subsubsection[{init()}]{\setlength{\rightskip}{0pt plus 5cm}void Snake\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_snake_ac9f00db4b693de3c552a0ae7275c8412}
+\hypertarget{class_snake_aa2e54c02d9427ff0744c2fba74fb2985}{}\index{Snake@{Snake}!Is\+Dead@{Is\+Dead}}
+\index{Is\+Dead@{Is\+Dead}!Snake@{Snake}}
+\subsubsection[{Is\+Dead()}]{\setlength{\rightskip}{0pt plus 5cm}bool Snake\+::\+Is\+Dead (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_snake_aa2e54c02d9427ff0744c2fba74fb2985}
+\hypertarget{class_snake_ae6e73811e36fa6e311d8d05ca339434e}{}\index{Snake@{Snake}!Is\+Eat@{Is\+Eat}}
+\index{Is\+Eat@{Is\+Eat}!Snake@{Snake}}
+\subsubsection[{Is\+Eat()}]{\setlength{\rightskip}{0pt plus 5cm}bool Snake\+::\+Is\+Eat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_snake_ae6e73811e36fa6e311d8d05ca339434e}
+\hypertarget{class_snake_a602fd6cb710af4a5e15785e82714d772}{}\index{Snake@{Snake}!move@{move}}
+\index{move@{move}!Snake@{Snake}}
+\subsubsection[{move(int)}]{\setlength{\rightskip}{0pt plus 5cm}void Snake\+::move (
+\begin{DoxyParamCaption}
+\item[{int}]{direction\+\_\+}
+\end{DoxyParamCaption}
+)}\label{class_snake_a602fd6cb710af4a5e15785e82714d772}
+\hypertarget{class_snake_a1f55b539dbd69567f0af08d13d61389c}{}\index{Snake@{Snake}!show@{show}}
+\index{show@{show}!Snake@{Snake}}
+\subsubsection[{show()}]{\setlength{\rightskip}{0pt plus 5cm}void Snake\+::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_snake_a1f55b539dbd69567f0af08d13d61389c}
+
+
+\subsection{类成员变量说明}
+\hypertarget{class_snake_a1349ccf7f145382b601ac41927f84af4}{}\index{Snake@{Snake}!direction@{direction}}
+\index{direction@{direction}!Snake@{Snake}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}int Snake\+::direction}\label{class_snake_a1349ccf7f145382b601ac41927f84af4}
+\hypertarget{class_snake_a2abf1fa22e67f5d911d973a5dea52f4d}{}\index{Snake@{Snake}!food@{food}}
+\index{food@{food}!Snake@{Snake}}
+\subsubsection[{food}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Food} Snake\+::food\mbox{[}{\bf M\+A\+X\+F\+O\+O\+D\+N\+U\+M}\mbox{]}}\label{class_snake_a2abf1fa22e67f5d911d973a5dea52f4d}
+\hypertarget{class_snake_a99959d37db34343d4d0c4a618e72fd43}{}\index{Snake@{Snake}!head@{head}}
+\index{head@{head}!Snake@{Snake}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Link}$\ast$ Snake\+::head =N\+U\+L\+L}\label{class_snake_a99959d37db34343d4d0c4a618e72fd43}
+\hypertarget{class_snake_a28ed7a3049eb61c81bc3aef5487b6e3e}{}\index{Snake@{Snake}!monster@{monster}}
+\index{monster@{monster}!Snake@{Snake}}
+\subsubsection[{monster}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Monster} Snake\+::monster}\label{class_snake_a28ed7a3049eb61c81bc3aef5487b6e3e}
+\hypertarget{class_snake_a18db40ca997cae2a8be85987330010f1}{}\index{Snake@{Snake}!speed@{speed}}
+\index{speed@{speed}!Snake@{Snake}}
+\subsubsection[{speed}]{\setlength{\rightskip}{0pt plus 5cm}int Snake\+::speed}\label{class_snake_a18db40ca997cae2a8be85987330010f1}
+\hypertarget{class_snake_a7d6269120c57743dd7da9da7bf2c1bc4}{}\index{Snake@{Snake}!tail@{tail}}
+\index{tail@{tail}!Snake@{Snake}}
+\subsubsection[{tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Link}$\ast$ Snake\+::tail =N\+U\+L\+L}\label{class_snake_a7d6269120c57743dd7da9da7bf2c1bc4}
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/杂事/课程/c语言/c语言代码/\+Snake/\+Snake.\+D\+E\+V/\hyperlink{snake_8h}{snake.\+h}\item 
+D\+:/杂事/课程/c语言/c语言代码/\+Snake/\+Snake.\+D\+E\+V/\hyperlink{snake_8c}{snake.\+c}\end{DoxyCompactItemize}
